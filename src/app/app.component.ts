@@ -8,8 +8,8 @@ import { User } from './models/tarea-model';
 })
 export class AppComponent {
 
-  listas: string[] = [];
   Users: User[];
+  flag : boolean = true;
 
   constructor() {
     const UsersJSON: string = `{
@@ -28,7 +28,14 @@ export class AppComponent {
 
     const UsersDict: any = JSON.parse(UsersJSON);
     this.Users = UsersDict['Users'];
-
+    
    
+  }
+  showData() {
+    return (this.flag = true);
+  }
+  hideData(usuari: User | null) {
+
+    return (this.flag = false);
   }
 }

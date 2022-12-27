@@ -1,2 +1,12 @@
-<h1>Por favor, haz bien la página</h1>
-{{tareas}}
+<div ngIf="flag= true">
+    <div ngFor="let user of Users">
+      <app-user-list (click)="hideData(null)"></app-user-list>
+      <button id="crear" (click)="hideData(null)">+ Añadir Tarea Nueva..</button>
+    </div>
+  </div>
+  <br>
+  <div id="formulario1" *ngIf="flag == false">
+    <app-form [User]="editUser"></app-form>
+    <br>
+    <button id="cancelar" (click)="showData()">Cancelar</button>
+  </div>
