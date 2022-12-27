@@ -1,9 +1,9 @@
-import { Usuario } from "./usuario-model";
-
-export interface Tarea {
-  lista: string;
-  img: string | null;
-  titulo: string;
-  usuarios: Usuario[];
-  fechaFin: Date | null;
+export interface User {
+  name: string;
+  lastName: string;
+  years : number;
+  img: string;
+  description: string;
+  email: string;
+  password: string;
 }

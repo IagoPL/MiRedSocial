@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { Tarea } from './models/tarea-model';
-
-const k_PENDIENTES_LISTA: string = "Pendientes";
-const k_PROGRESO_LISTA: string = "Progreso";
-const k_FINALIZADAS_LISTA: string = "Finalizadas";
+import { User } from './models/tarea-model';
 
 @Component({
   selector: 'app-root',
@@ -13,23 +9,26 @@ const k_FINALIZADAS_LISTA: string = "Finalizadas";
 export class AppComponent {
 
   listas: string[] = [];
-  tareas: Tarea[];
+  Users: User[];
 
   constructor() {
-    const tareasJSON: string = `{
-      "tareas": [
-        { "lista": "${k_FINALIZADAS_LISTA}", "img": "https://picsum.photos/300/200", "titulo": "Tarea 1: Diseño UI", "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}], "fechaFin": "2019-01-16" },
-        { "lista": "${k_PROGRESO_LISTA}", "img": "https://picsum.photos/300/200", "titulo": "Tarea 2: Diseño de todo el Backend", "usuarios": [], "fechaFin": "2022-11-09" },
-        { "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 3: Diseño de la base de datos", "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}, {"img": "https://picsum.photos/300/300", "alt": "Usuario"}], "fechaFin": "2022-11-16" },
-        { "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 4: Implementar todo el Front-End", "usuarios": [], "fechaFin": null }
+    const UsersJSON: string = `{
+      "UserList": [{
+        "name": "Sofia",
+        "lastName": "Rodrigo",
+        "years": "40",
+        "img": "https://imgs.search.brave.com/GPL0x7y0elbJb9bRboGzy3jZlkSUiDDJTnLIOgv8k0Q/rs:fit:480:328:1/g:ce/aHR0cDovL2ltYWdl/cy5yZWRldHYudW9s/LmNvbS5ici9zaXRl/cmVkZXR2L2dydXBv/cy9qb3JuYWxpc21v/L3JlZGV0dmlub3Rp/Y2lhcy9ub3RpY2lh/cy9pbWFnZXMvZ3Jh/bmRlcy81MzQxNzIu/anBn",
+        "description": "no se que poner",
+        "email": "sofiii@gmail.com",
+        "password" : "capybara123"
+      
+      }
       ]
     }`;
 
-    const tareasDict: any = JSON.parse(tareasJSON);
-    this.tareas = tareasDict['tareas'];
+    const UsersDict: any = JSON.parse(UsersJSON);
+    this.Users = UsersDict['Users'];
 
-    this.listas.push(k_PENDIENTES_LISTA);
-    this.listas.push(k_PROGRESO_LISTA);
-    this.listas.push(k_FINALIZADAS_LISTA);
+   
   }
 }
