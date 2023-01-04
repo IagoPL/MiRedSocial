@@ -1,9 +1,9 @@
 export interface User {
-  name: string;
-  lastName: string;
-  years : number;
+  nom: string;
+  cognoms: string;
+  edat : number;
   img: string;
-  description: string;
-  email: string;
-  password: string;
+  descripcio: string;
+  correu: string;
+  clau: string;
 }

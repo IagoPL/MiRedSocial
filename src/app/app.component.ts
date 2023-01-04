@@ -4,38 +4,77 @@ import { User } from './models/tarea-model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
-  Users: User[];
-  flag : boolean = true;
-
+  users: User[] = [];
+  flag: boolean = false;
+  nom: any = this.users;
+  counter: number = 0;
   constructor() {
     const UsersJSON: string = `{
-      "UserList": [{
-        "name": "Sofia",
-        "lastName": "Rodrigo",
-        "years": "40",
-        "img": "https://imgs.search.brave.com/GPL0x7y0elbJb9bRboGzy3jZlkSUiDDJTnLIOgv8k0Q/rs:fit:480:328:1/g:ce/aHR0cDovL2ltYWdl/cy5yZWRldHYudW9s/LmNvbS5ici9zaXRl/cmVkZXR2L2dydXBv/cy9qb3JuYWxpc21v/L3JlZGV0dmlub3Rp/Y2lhcy9ub3RpY2lh/cy9pbWFnZXMvZ3Jh/bmRlcy81MzQxNzIu/anBn",
-        "description": "no se que poner",
-        "email": "sofiii@gmail.com",
-        "password" : "capybara123"
-      
+      "usuaris": [
+      {
+      "nom": "Pere",
+      "cognoms": "Porras",
+      "edat": 25,
+      "descripcio": "Soltero super guapo y morenote",
+      "correu": "pporras@gmail.com",
+      "clau": "123456"
+      },
+      {
+      "nom": "alejandro",
+      "cognoms": "Porras",
+      "edat": 25,
+      "descripcio": "Soltero super guapo y morenote",
+      "correu": "pporras@gmail.com",
+      "clau": "123456"
+      },
+      {
+      "nom": "Pere",
+      "cognoms": "Porras",
+      "edat": 25,
+      "descripcio": "Soltero super guapo y morenote",
+      "correu": "pporras@gmail.com",
+      "clau": "123456"
+      },
+      {
+      "nom": "alejandro",
+      "cognoms": "Porras",
+      "edat": 25,
+      "descripcio": "Soltero super guapo y morenote",
+      "correu": "pporras@gmail.com",
+      "clau": "123456"
+      },
+      {
+      "nom": "Pilar",
+      "cognoms": "Ponas",
+      "edat": 18,
+      "descripcio": "Soltera amable y simpática",
+      "correu": "pponas@gmail.com",
+      "clau": "123456"
       }
       ]
-    }`;
+      }`;
 
     const UsersDict: any = JSON.parse(UsersJSON);
-    this.Users = UsersDict['Users'];
-    
-   
+    this.users = UsersDict['usuaris'];
   }
+
+  // cambia el flag para que muestre un panel o otro
+
+  increaseCounterer() {
+    
+    this.counter++;
+  
+    
+  }
+
   showData() {
     return (this.flag = true);
   }
-  hideData(usuari: User | null) {
-
+  // cambia el flag para que muestre un panel o otro
+  hideData() {
     return (this.flag = false);
   }
 }
