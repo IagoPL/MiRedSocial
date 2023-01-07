@@ -5,10 +5,17 @@
       <div class="cards" *ngFor="let eq of users">
         <app-user-list [item]="users[counter]"> </app-user-list>
         {{ increaseCounterer() }} <!-- esto esta asi porque no me deja meter eq en Users[] ya que me dice : El tipo 'Usuario' no se puede utilizar como tipo de índice -->
+          <button onclick="">
+          Editar usuario
+        </button>
       </div>
     </div>
+
+    <button (click)="changeFlag()">crear usuario</button>
   </div>
 
 
 
-<div *ngIf="flag == true">pene</div>
+<div *ngIf="flag == true">
+<app-form (crateUser)="upload($event)"></app-form>
+</div>

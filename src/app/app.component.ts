@@ -77,4 +77,15 @@ export class AppComponent {
   hideData() {
     return (this.flag = false);
   }
+
+  changeFlag(){
+    
+    
+    this.flag = !this.flag;
+    console.log("this.flag");
+  }
+
+  upload(user: any) {
+    this.users.push(user);
+  }
 }
