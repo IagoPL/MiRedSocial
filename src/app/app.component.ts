@@ -8,7 +8,7 @@ import { User } from './models/tarea-model';
 })
 export class AppComponent {
   users: User[] = [];
-  flag: boolean = true;
+  flag: boolean = false;
   nom: any = this.users;
   counter: number = 0;
   constructor() {
@@ -86,6 +86,7 @@ export class AppComponent {
   }
 
   upload(user: any) {
+    this.counter = 0;
     this.flag = false;
     this.users.push(user);
   }

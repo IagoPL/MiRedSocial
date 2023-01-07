@@ -29,19 +29,19 @@ export class FormComponent implements OnInit {
 
   registrarUsuario = this.fb.group(
     {
-      nombre: new FormControl('', [Validators.required]),
-      apellido: new FormControl('', [Validators.required]),
-      edad: new FormControl('', [Validators.required]),
-      descripcion: new FormControl('', [
+      nom: new FormControl('', [Validators.required]),
+      cognoms: new FormControl('', [Validators.required]),
+      edat: new FormControl('', [Validators.required]),
+      descripcio: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
       ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
-      passwordMatch: new FormControl('', [Validators.required]),
+      correu: new FormControl('', [Validators.required, Validators.email]),
+      clau: new FormControl('', [Validators.required]),
+      replicaClau: new FormControl('', [Validators.required]),
     },
     {
-      validator: this.ConfirmedValidator('password', 'passwordMatch'),
+      validator: this.ConfirmedValidator('clau', 'replicaClau'),
     }
   );
 
@@ -89,9 +89,11 @@ export class FormComponent implements OnInit {
     
     if (this.registrarUsuario.valid) {
       console.log(this.registrarUsuario.value);
-      return alert('esta todo bien illo');
+      this.crateUser.emit(this.registrarUsuario.value)
+      return alert('esta todo bien');
+
     } else {
-      return alert('onde vas loco, hay algo mal...');
+      return alert('hay algo mal...');
     }
   }
 

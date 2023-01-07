@@ -7,10 +7,14 @@ import { User } from '../models/tarea-model';
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-  @Input() item: any  
-  // TODO: mirar de poner que sea User, buscar como importarlo
+  @Input() item: any = "";
+  thisItem: any = this.item;
+
 
   constructor() {}
 
-  ngOnInit(): void {}
+ 
+  ngOnInit(): void {
+    console.log(this.item)
+  }
 }
