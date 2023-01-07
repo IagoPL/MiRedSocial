@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   isSubmit: boolean = false;
   constructor(private fb: FormBuilder) {}
   @Output () crateUser = new EventEmitter<any>();
-  @Output () flag = new EventEmitter<boolean>();
+
 
   
 

@@ -1,0 +1,15 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  border-style: inset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-group {
+  border: 5px;
+}

@@ -8,7 +8,7 @@ import { User } from './models/tarea-model';
 })
 export class AppComponent {
   users: User[] = [];
-  flag: boolean = false;
+  flag: boolean = true;
   nom: any = this.users;
   counter: number = 0;
   constructor() {
@@ -82,10 +82,17 @@ export class AppComponent {
     
     
     this.flag = !this.flag;
-    console.log("this.flag");
+
   }
 
   upload(user: any) {
+    this.flag = false;
     this.users.push(user);
   }
+
+  motrarjson(){
+    console.log(this.users);
+    
+  }
+
 }
